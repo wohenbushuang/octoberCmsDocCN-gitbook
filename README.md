@@ -5,11 +5,10 @@
 > 
 > 译者非语言系，使用业余时间翻译，以便自己开发速查。如有翻译错误或不通顺的地方请多海涵。
 
-October CMS，即十月内容管理系统，是一款基于Laravel开发的CMS系统，
 
 ![October](https://github.com/octobercms/october/blob/master/themes/demo/assets/images/october.png?raw=true)
 
-[October](http://octobercms.com) 是一个内容管理系统 (CMS) ，一个让你的开发流程更加简单为唯一目的的网络平台。它的诞生源于对现有系统的失望。我们觉得建设网站已成为使开发人员费解、混淆和不满意的过程。我们希望能把你带回简单的一面，回到基础中。
+[October](http://octobercms.com) （十月内容管理系统）是一个内容管理系统 (CMS) ，一个让你的开发流程更加简单为唯一目的的网络平台。它的诞生源于对现有系统的失望。我们觉得建设网站已成为使开发人员费解、混淆和不满意的过程。我们希望能把你带回简单的一面，回到基础中。
 
 October的任务是向世界展现：web开发并非是造火箭的科学（那么难）。
 
