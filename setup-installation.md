@@ -4,12 +4,12 @@
 - [最低系统要求](#system-requirements)
 - [向导安装](#wizard-installation)
     - [安装疑难解答](#troubleshoot-installation)
-- [Command-line installation](#command-line-installation)
-- [Post-installation steps](#post-install-steps)
-    - [Delete installation files](#delete-install-files)
-    - [Review configuration](#config-review)
-    - [Setting up the scheduler](#crontab-setup)
-    - [Setting up queue workers](#queue-setup)
+- [命令行安装](#command-line-installation)
+- [安装后步骤](#post-install-steps)
+    - [删除安装文件](#delete-install-files)
+    - [复查配置](#config-review)
+    - [建立定时任务](#crontab-setup)
+    - [建立队列](#queue-setup)
 
 你可以通过两种方式安装 October, [向导安装](#wizard-installation) 和 [命令行安装](../console/commands#console-install) 。 在安装前，你需要确认服务器满足最低系统要求。
 
@@ -36,7 +36,7 @@ October CMS 对 web 服务器主机有要求：
 安装 October 的推荐方式是使用向导安装。这比命令行安装简单，并且不需要特殊技能。
 
 1. 在你的服务器上准备好空文件夹。它可以是子文件夹、域名根目录或子域名目录。
-1. [下载安装包](http://octobercms.com/download)。
+1. [下载安装包](http://octobercms.com/download) 。
 1. 解压缩安装包到准备的文件夹中。
 1. 给予安装目录及所有子目录和文件可写权限。
 1. 在你的 web 浏览器中打开 install.php 。
@@ -58,46 +58,46 @@ October CMS 对 web 服务器主机有要求：
 > **提示：** 详细的安装日志可以在文件 `install_files/install.log` 中找到。
 
 <a name="command-line-installation"></a>
-## Command-line installation
+## 命令行安装
 
-If you feel more comfortable with a command-line or want to use composer, there is a CLI install process on the [Console interface page](../console/commands#console-install).
+如果你觉得命令行更方便，或者希望使用 composer ， 命令行界面安装过程参见 [控制台交互页面](../console/commands#console-install) 。
 
 <a name="post-install-steps"></a>
-## Post-installation steps
+## 安装后步骤
 
-There are some things you may need to set up after the installation is complete.
+当安装完成后你需要做些配置。
 
 <a name="delete-install-files"></a>
-### Delete installation files
+### 删除安装文件
 
-If you have used the [Wizard installer](#wizard-installation) you should delete the installation files for security reasons. October will never delete files from your system automatically, so you should delete these files and directories manually:
+如果你用了 [向导安装](#wizard-installation) ，为了安全原因你需要删除安装文件。 October 不会自动从你系统中删除文件，所以你需要手动删除这些文件和文件夹：
 
     install_files/      <== Installation directory
     install.php         <== Installation script
 
 <a name="config-review"></a>
-### Review configuration
+### 复查配置
 
-Configuration files are stored in the **config** directory of the application. While each file contains descriptions for each setting, it is important to review the [common configuration options](../setup/configuration) available for your circumstances.
+配置文件储存在程序 **config** 目录中。虽然每个文件对每个配置项都有描述，仔细阅读对你环境可用的 [通用配置选项](../setup/configuration) 仍然很重要。
 
-For example, in production environments you may want to enable [CSRF protection](../setup/configuration#csrf-protection). While in development environments, you may want to enable [bleeding edge updates](../setup/configuration#edge-updates).
+比如说，在生产环境中你可能想要打开 [CSRF 保护](../setup/configuration#csrf-protection) 。在开发环境中，你可能想要启用 [最新的更新](../setup/configuration#edge-updates) 。
 
-While most configuration is optional, we strongly recommend disabling [debug mode](../setup/configuration#debug-mode) for production environments.
+虽然大部分配置项是可选的，我们强烈建议在生产环境下关闭 [debug 模式](../setup/configuration#debug-mode) 。
 
 <a name="crontab-setup"></a>
-### Setting up the scheduler
+### 建立定时任务
 
-For *scheduled tasks* to operate correctly, you should add the following Cron entry to your server. Editing the crontab is commonly performed with the command `crontab -e`.
+为了让 *定时任务* 正确运行，你需要添加下列 Cron 入口到你的服务器。编辑 crontab 通常使用命令 `crontab -e` 。
 
     * * * * * php /path/to/artisan schedule:run >> /dev/null 2>&1
 
-Be sure to replace **/path/to/artisan** with the absolute path to the *artisan* file in the root directory of October. This Cron will call the command scheduler every minute. Then October evaluates any scheduled tasks and runs the tasks that are due.
+切记将 **/path/to/artisan** 替换成 October 根目录里 *artisan* 文件的绝对地址。这个 Cron 将每分钟定时运行命令行。之后 October 将评估所有定时任务并运行到时任务。
 
-> **Note**: If you are adding this to `/etc/cron.d` you'll need to specify a user immediately after `* * * * *`.
+> **提示**：如果你把 Corn 命令加入 `/etc/cron.d` ，你需要在 `* * * * *` 后指明一个（linux）用户。
 
 <a name="queue-setup"></a>
-### Setting up queue workers
+### 建立队列
 
-You may optionally set up an external queue for processing *queued jobs*, by default these will be handled asynchronously by the platform. This behavior can be changed by setting the `default` parameter in the `config/queue.php`.
+可能你希望选择配置外部队列来运行 *队列任务* ，默认上这些任务将会由这些平台异步处理。这些可以通过设置 `config/queue.php` 中的 `default` 变量来变更。
 
-If you decide to use the `database` queue driver, it is a good idea to add a Crontab entry for the command `php artisan queue:work` to process the first available job in the queue.
+如果你打算使用 `数据库` 驱动队列，那么可以为 `php artisan queue:work` 命令添加个 Crontab 入口来运行队列中首个可用的任务。
