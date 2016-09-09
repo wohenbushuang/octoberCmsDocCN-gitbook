@@ -1,8 +1,7 @@
 {
     "gitbook": "2.2.x",
     "plugins": [
-        "toc",
-        "page-footer"
+        "toc"
     ],
     "pluginsConfig": {
         "toc": {
