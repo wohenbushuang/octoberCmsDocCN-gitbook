@@ -2,7 +2,7 @@
     "plugins": [
         "numbered-headings",
         "toc",
-        "tbfed-pagefooter",
+        "tbfed-pagefooter"
     ],
     "pluginsConfig": {
         "toc": {
