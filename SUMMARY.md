@@ -10,5 +10,6 @@
    * 局部
    * 布局
    * 内容块
+   * 组件
 * [EN版本备份](ENbackup/README.md)
 
