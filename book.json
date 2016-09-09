@@ -9,7 +9,7 @@
             "className": "toc"
         },
         "localized-footer": {
-            "filename": "../FOOTER.md"
+            "filename": "FOOTER.md"
         }
     }
 }
