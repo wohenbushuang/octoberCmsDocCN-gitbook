@@ -11,5 +11,6 @@
    * 布局
    * 内容块
    * 组件
+   * AJAX 框架
 * [EN版本备份](ENbackup/README.md)
 
