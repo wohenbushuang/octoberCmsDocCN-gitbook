@@ -15,4 +15,5 @@
    * 媒体管理
    * Markup 指南
 * [EN版本备份](ENbackup/README.md)
+* 主题
 
