@@ -1,1 +1,18 @@
-{}
+{
+    "plugins": [
+        "numbered-headings",
+        "toc",
+        "tbfed-pagefooter",
+    ],
+    "pluginsConfig": {
+        "toc": {
+            "addClass": true,
+            "className": "toc"
+        },
+        "tbfed-pagefooter": {
+            "copyright":"&copy github@wohenbushuang by rnicrosoft",
+            "modify_label": "修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        }
+    },
+}
