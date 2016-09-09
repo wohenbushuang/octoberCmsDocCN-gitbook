@@ -10,7 +10,7 @@
             "className": "toc"
         },
         "localized-footer": {
-            "filename": "FOOTER.md" // optional, defaults to "FOOTER.md"
+            "filename": "../FOOTER.md" // optional, defaults to "FOOTER.md"
                                     // may also be a relative path to the book root
         }
     }
