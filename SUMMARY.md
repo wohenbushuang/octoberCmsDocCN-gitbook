@@ -14,12 +14,12 @@
    * AJAX 框架
    * 媒体管理
    * Markup 指南
-* [EN版本备份](ENbackup/README.md)
 * 主题
 * 插件
 * 后端
 * 数据库
 * 服务
 * 控制台
+* [EN版本备份](ENbackup/README.md)
 * 附加
 
