@@ -5,7 +5,7 @@
    * [安装](setup-installation.md)
    * [配置](setup-configuration.md)
 * CMS
-   * 主题
+   * [主题](cms-themes.md)
    * 页面
    * 局部
    * 布局
