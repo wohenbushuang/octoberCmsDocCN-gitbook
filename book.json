@@ -1,13 +1,8 @@
 {
     "plugins": [
-        "toc",
         "localized-footer"
     ],
     "pluginsConfig": {
-        "toc": {
-            "addClass": true,
-            "className": "toc"
-        },
         "localized-footer": {
             "filename": "FOOTER.md"
         }
