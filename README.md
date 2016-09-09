@@ -61,7 +61,7 @@ You can communicate with us using the following mediums:
 
 ### 贡献
 
-在发起 Pull 请求前，请先依照 [贡献指南](CONTRIBUTING.md) 复查。
+在发起 Pull 请求前，请先依照 [贡献指南](https://github.com/octobercms/october/blob/master/CONTRIBUTING.md) 复查。
 
 ### 编码规范
 
