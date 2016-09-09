@@ -1,5 +1,5 @@
 {
-    "gitbook": "2.7.x",
+    "gitbook": "2.6.x",
     "plugins": [
         "numbered-headings",
         "toc",
