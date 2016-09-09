@@ -1,6 +1,8 @@
 # 简介
 
 
+> gitbook阅读：[https://wohenbushuang.gitbooks.io/octobercmsdoccn/content/](https://wohenbushuang.gitbooks.io/octobercmsdoccn/content/)
+> 
 > 以下简介摘自October CMS项目的 ```README.md``` ，项目地址 [https://github.com/octobercms/october](https://github.com/octobercms/october)
 > 
 > 译者非语言系，使用业余时间翻译，以便自己开发速查。如有翻译错误或不通顺的地方请多海涵。
