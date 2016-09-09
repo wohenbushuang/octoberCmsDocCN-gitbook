@@ -1,10 +1,16 @@
 {
     "plugins": [
-        "localized-footer"
+        "localized-footer",
+        "-search",
+        "search-pro"
     ],
     "pluginsConfig": {
         "localized-footer": {
             "filename": "FOOTER.md"
+        },
+        "search-pro": {
+            "cutWordLib": "nodejieba",
+            "defineWord" : ["十月","安装"]
         }
     }
 }
