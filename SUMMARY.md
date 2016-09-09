@@ -6,5 +6,6 @@
    * [配置](setup-configuration.md)
 * CMS
    * 主题
+   * 页面
 * [EN版本备份](ENbackup/README.md)
 
