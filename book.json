@@ -1,8 +1,8 @@
 {
     "plugins": [
         "localized-footer",
-        "-search",
-        "search-pro"
+        "-lunr",
+        "search-jieba"
     ],
     "pluginsConfig": {
         "localized-footer": {
