@@ -12,5 +12,6 @@
    * 内容块
    * 组件
    * AJAX 框架
+   * 媒体管理
 * [EN版本备份](ENbackup/README.md)
 
