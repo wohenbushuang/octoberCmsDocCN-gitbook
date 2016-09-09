@@ -2,29 +2,16 @@
     "gitbook": "2.2.x",
     "plugins": [
         "toc",
-        "page-footer"
+        "localized-footer"
     ],
     "pluginsConfig": {
         "toc": {
             "addClass": true,
             "className": "toc"
         },
-        "page-footer": {
-            "description": "修订时间：",
-            "signature": "rnicrosoft",
-            "wisdom": "Repo: wohenbushuang/octoberCmsDocCN-gitbook github@wohenbushuang by rnicrosoft",
-            "format": "yyyy-MM-dd hh:mm:ss",
-            "copyright": "Copyright &#169; github@wohenbushuang by rnicrosoft",
-            "timeColor": "#666",
-            "copyrightColor": "#666",
-            "utcOffset": "8",
-            "isShowQRCode": false,
-            "baseUri": "https://wohenbushuang.gitbooks.io/octobercmsdoccn/content/",
-            "isShowIssues": true,
-            "repo": "wohenbushuang/octoberCmsDocCN-gitbook",
-            "issueNum": 8,
-            "token": "",
-            "style": "normal"
+        "localized-footer": {
+            "filename": "FOOTER.md" // optional, defaults to "FOOTER.md"
+                                    // may also be a relative path to the book root
         }
     }
 }
