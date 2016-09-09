@@ -1,5 +1,5 @@
 {
-    "gitbook": "2.2.x",
+    "gitbook": "2.1.x",
     "plugins": [
         "toc",
         "localized-footer"
