@@ -1,17 +1,17 @@
-# CMS Themes
+# CMS 主题
 
-- [Introduction](#introduction)
-- [Directory structure](#directory-structure)
-    - [Subdirectories](#subdirectories)
-- [Template structure](#template-structure)
-    - [Configuration section](#configuration-section)
-    - [PHP code section](#php-section)
+- [简介](#introduction)
+- [目录结构](#directory-structure)
+    - [子目录](#subdirectories)
+- [模板结构](#template-structure)
+    - [配置](#configuration-section)
+    - [PHP 代码 section](#php-section)
     - [Twig markup section](#twig-section)
 
 <a name="introduction"></a>
-## Introduction
+## 简介
 
-Themes define the appearance of your website or web application built with October. October themes are completely file-based and can be managed with any version control system, for example Git. This page gives you the high-level description of October themes. You will find more details about [pages](pages), [partials](partials), [layouts](layouts) and [content files](content) in the corresponding articles.
+主题定义了你用 October 建立网站或 web 程序的外观。 October 主题全是基于文件的，并且可以通过任何版本系统管理，比如说 Git 。这个页面允许你通过高层级来描述 October 主题。你可以在[页面](pages)、[局部](partials)、[布局](layouts)和[内容](content)相应文章找到更多细节。
 
 Themes are directories that reside in the **/themes** directory by default. Themes can contain the following objects:
 
