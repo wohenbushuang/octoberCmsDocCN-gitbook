@@ -115,7 +115,7 @@ October 需要在你的服务器上应用一些基础配置。以下是常用的
 <a name="debug-mode"></a>
 ### Debug 模式
 
-可以在配置文件 `config/app.php` 中的 `debug` 变量找到 debug 选项，默认开启。
+可以在配置文件 `config/app.php` 中的 `debug` 参数找到 debug 选项，默认开启。
 
 当这个选项开启时，（页面）将会显示其他正在开发的功能发出的详细错误信息。虽然在开发时 debug 模式很实用，在线上生产环境站点中总是应该关闭 debug 模式。这将预防潜在的敏感信息被展现给终端用户。
 
@@ -131,7 +131,7 @@ debug 模式打开时有以下功能特性：
 <a name="safe-mode"></a>
 ### 安全模式
 
-可以在配置文件 `config/cms.php` 中的 `enableSafeMode` 变量找到安全模式选项。默认值是 `null` 。
+可以在配置文件 `config/cms.php` 中的 `enableSafeMode` 参数找到安全模式选项。默认值是 `null` 。
 
 如果打开安全模式， CMS 模版中的 PHP 代码段将因安全原因关闭。如果设为 `null` ，安全模式将在 [debug 模式](#debug-mode) 关闭时启用。
 
@@ -140,14 +140,14 @@ debug 模式打开时有以下功能特性：
 
 October 提供简单的方法来保护你的程序远离跨站请求伪造。首先一个随机 token 将被放入你用户的 session 中。之后当[使用开放表单标签](services-html#form-tokens)时 token 将被加入页面并随每个请求被提交回来。
 
-虽然 CSRF 防护默认关闭，你可以通过配置文件 `config/cms.php` 中的 `enableCsrfProtection` 变量打开。
+虽然 CSRF 防护默认关闭，你可以通过配置文件 `config/cms.php` 中的 `enableCsrfProtection` 参数打开。
 
 <a name="edge-updates"></a>
 ### 最新的更新
 
 October 平台和一些插件会分两步实现改动以保证平台的整体稳定性和完整性。这意味着他们除默认的*稳定版*外还有*测试版*。
 
-你可以通过改变配置文件 `config/cms.php` 中的 `edgeUpdates` 变量让平台优先选择测试版。
+你可以通过改变配置文件 `config/cms.php` 中的 `edgeUpdates` 参数让平台优先选择测试版。
 
     /*
     |--------------------------------------------------------------------------
