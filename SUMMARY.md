@@ -5,6 +5,7 @@
    * [安装](setup-installation.md)
    * [配置](setup-configuration.md)
 * CMS
+   * [主题](cms-themes.md)
    * [页面](cms-pages.md)
    * [局部](cms-partials.md)
    * [布局](cms-layouts.md)
@@ -15,7 +16,7 @@
    * Markup 指南 >>
        * Markup
            * [Templating](markup-templating.md)
-       * Variables
+       * Variables
            * [this.page](markup-this-page.md)
            * [this.layout](markup-this-layout.md)
            * [this.theme](markup-this-theme.md)
