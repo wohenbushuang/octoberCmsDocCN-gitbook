@@ -4,82 +4,82 @@
 - [目录结构](#directory-structure)
     - [子目录](#subdirectories)
 - [模板结构](#template-structure)
-    - [配置](#configuration-section)
-    - [PHP 代码 section](#php-section)
-    - [Twig markup section](#twig-section)
+    - [配置部分](#configuration-section)
+    - [PHP 代码部分](#php-section)
+    - [Twig markup部分](#twig-section)
 
 <a name="introduction"></a>
 ## 简介
 
-主题定义了你用 October 建立网站或 web 程序的外观。 October 主题全是基于文件的，并且可以通过任何版本系统管理，比如说 Git 。这个页面给你 October 主题的高层次描述。你可以在[页面](pages)、[局部](partials)、[布局](layouts)和[内容](content)相应文章找到更多细节。
+主题定义了你用 October 建立网站或 web 程序的外观。 October 主题全部基于文件，并且可以通过任何版本系统管理，比如说 Git 。这个页面给你 October 主题的高层次描述。你可以在[页面](pages)、[局部](partials)、[布局](layouts)和[内容](content)相应文章找到更多细节。
 
-Themes are directories that reside in the **/themes** directory by default. Themes can contain the following objects:
+主题是默认在文件夹 **/themes** 中的文件夹。主题可以包含以下对象：
 
-Object | Description
+对象 | 描述
 ------------- | -------------
-[Pages](pages) | represent the website pages.
-[Partials](partials) | contain reusable chunks of HTML markup.
-[Layouts](layouts) | define the page scaffold.
-[Content files](content) | text, HTML or [Markdown](http://daringfireball.net/projects/markdown/syntax) blocks that can be edited separately from the page or layout.
-**Asset files** | are resource files like images, CSS and JavaScript files.
+[页面](pages) | 展现网页页面。
+[局部](partials) | 包含可复用 HTML markup 块。
+[布局](layouts) | 定义页面脚手架。
+[内容](content) | 可与页面或布局分离单独编辑的文本、 HTML 或 [Markdown](http://daringfireball.net/projects/markdown/syntax) 块。
+**Asset 文件** | 诸如图像、 CSS 和 JavaScript 的资源文件。
 
 <a name="directory-structure"></a>
-## Directory structure
+## 目录结构
 
-Below you can see an example theme directory structure. Each October theme is represented with a separate directory and generally one active theme is used for displaying the website. This example displays the "website" theme directory.
+以下你可以看到一个示例主题的文件夹结构。每个 October 使用分开的目录，一般来说将有一个活动的主题用来展示网站。这个示例将展示的是 "website" 主题文件夹。
 
     themes/
-      website/           <=== Theme starts here
-        pages/           <=== Pages directory
+      website/           <=== 主题从此开始
+        pages/           <=== 页面目录
           home.htm
-        layouts/         <=== Layouts directory
+        layouts/         <=== 布局目录
           default.htm
-        partials/        <=== Partials directory
+        partials/        <=== 局部目录
           sidebar.htm
-        content/         <=== Content directory
+        content/         <=== 内容目录
           intro.htm
-        assets/          <=== Assets directory
+        assets/          <=== Assets 目录
           css/
             my-styles.css
           js/
           images/
 
-> The active theme is set with the `activeTheme` parameter in the `config/cms.php` file or with the Theme Selector on the System > CMS > Front-end Theme back-end page. The theme set with the Theme Selector overrides the value in the `config/cms.php` file.
+> 活动主题可以通过文件 `config/cms.php` 中的 `activeTheme` 参数或者后端页中系统>CMS>前端主题的主题选择器来设定。主题选择器的主题设定将覆写文件 `config/cms.php` 中的值。
 
 <a name="subdirectories"></a>
-### Subdirectories
+### 子目录
 
-October supports a single level subdirectories for pages, partials, layouts and content files (the **assets** directory can have any structure). This simplifies organizing large websites. In the example directory structure below you can see that the pages and partials directories contain the **blog** subdirectory and the content directory contains the **home** subdirectory.
+October 支持页面、局部、布局和内容文件的单层级子目录（ **assets** 目录可以有任意结构）。这简化了大网站的组织。在下面示例的目录结构中你可以看到页面和局部目录包含了 **blog** 子目录，内容目录包含了 **home** 子目录。
 
     themes/
       website/
         pages/
           home.htm
-          blog/                  <=== Subdirectory
+          blog/                  <=== 子目录
             archive.htm
             category.htm
         partials/
           sidebar.htm
-          blog/                  <=== Subdirectory
+          blog/                  <=== 子目录
             category-list.htm
         content/
           footer-contacts.txt
-          home/                  <=== Subdirectory
+          home/                  <=== 子目录
             intro.htm
         ...
 
-To refer to a partial or a content file from a subdirectory, specify the subdirectory name before the template name. Example of rendering a partial from a subdirectory:
+从子目录引用局部或内容文件时，在模板名前指明子目录名。渲染子目录中局部的范例：
 
     {% partial "blog/category-list" %}
 
-> **Note:** The template paths are always absolute. If in a partial you render another partial from the same subdirectory you still need to specify the subdirectory name.
+> **提示:** 模板永远都是绝对路径。如果在局部中渲染同子文件夹的另一个局部，你仍需要指明子目录名。
 
 <a name="template-structure"></a>
-## Template structure
+## 模板结构
 
-Pages, partials and layout templates can include up to 3 sections: **configuration**, **PHP code**, and **Twig markup**.
-Sections are separated with the `==` sequence.
-For example:
+页面、局部和布局模板可以至少包括3个部分： **配置**、**PHP 代码**和 **Twig markup**。
+部分间可以可以用`==`序列分开。
+举个例子：
 
     url = "/blog"
     layout = "default"
@@ -96,9 +96,9 @@ For example:
     {% endfor %}
 
 <a name="configuration-section"></a>
-### Configuration section
+### 配置部分
 
-The configuration section sets the template parameters. Supported configuration parameters are specific for different CMS templates and described in their corresponding documentation articles. The configuration section uses the simple [INI format](http://en.wikipedia.org/wiki/INI_file), where string parameter values are enclosed within quotes. Example configuration section for a page template:
+配置部分设置了模板的参数。相应文档文章中明确并描述了不同的CMS模板支持的配置参数。配置部分使用简单的 [INI 格式](http://en.wikipedia.org/wiki/INI_file)，字符串参数值用引号包括。页面模板的配置部分示例：
 
     url = "/blog"
     layout = "default"
@@ -107,9 +107,9 @@ The configuration section sets the template parameters. Supported configuration 
     parameter = "value"
 
 <a name="php-section"></a>
-### PHP code section
+### PHP 代码部分
 
-The code in the PHP section executes every time before the template is rendered. The PHP section is optional for all CMS templates and its contents depends on the template type where it is defined. The PHP code section can contain optional open and close PHP tags to enable syntax highlighting in text editors. The open and close tags should always be specified on another line to the section separator `==`.
+PHP 部分中的代码在每次模板渲染前执行。 PHP 部分对于所有 CMS 模板都是可选的，内容取决于定义的模板类型。 PHP 代码部分可以包含可选的 PHP 开启关闭标签来在编辑器中打开语法高亮。开启关闭标签总应当在部分分隔外的另一行中明确。
 
     url = "/blog"
     layout = "default"
