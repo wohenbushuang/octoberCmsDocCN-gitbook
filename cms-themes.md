@@ -11,7 +11,7 @@
 <a name="introduction"></a>
 ## 简介
 
-主题定义了你用 October 建立网站或 web 程序的外观。 October 主题全是基于文件的，并且可以通过任何版本系统管理，比如说 Git 。这个页面允许你通过高层级来描述 October 主题。你可以在[页面](pages)、[局部](partials)、[布局](layouts)和[内容](content)相应文章找到更多细节。
+主题定义了你用 October 建立网站或 web 程序的外观。 October 主题全是基于文件的，并且可以通过任何版本系统管理，比如说 Git 。这个页面给你 October 主题的高层次描述。你可以在[页面](pages)、[局部](partials)、[布局](layouts)和[内容](content)相应文章找到更多细节。
 
 Themes are directories that reside in the **/themes** directory by default. Themes can contain the following objects:
 
