@@ -109,7 +109,7 @@ October 支持页面、局部、布局和内容文件的单层级子目录（ **
 <a name="php-section"></a>
 ### PHP 代码部分
 
-PHP 部分中的代码在每次模板渲染前执行。 PHP 部分对于所有 CMS 模板都是可选的，内容取决于定义的模板类型。 PHP 代码部分可以包含可选的 PHP 开启关闭标签来在编辑器中打开语法高亮。开启关闭标签总应当在部分分隔外的另一行中明确。
+PHP 部分中的代码在每次模板渲染前执行。 PHP 部分对于所有 CMS 模板都是可选的，内容取决于定义的模板类型。 PHP 代码部分可以包含可选的 PHP 开启关闭标签来在编辑器中打开语法高亮。开启关闭标签总应当在除部分分隔外的另一行中明确。
 
     url = "/blog"
     layout = "default"
@@ -127,7 +127,7 @@ PHP 部分中的代码在每次模板渲染前执行。 PHP 部分对于所有 C
         {{ post.content }}
     {% endfor %}
 
-In the PHP section you can only define functions and refer to namespaces with the PHP `use` keyword. No other PHP code is allowed in the PHP section. This is because the PHP section is converted to a PHP class when the page is parsed. Example of using a namespace reference:
+在 PHP 部分中你只能定义函数和用 PHP 的 `use` 关键字来引用命名空间。 PHP 部分不允许其他 PHP 代码。这是因为 PHP 部分在页面解析时将被转换成一个 PHP 的类。使用命名空间的范例：
 
     url = "/blog"
     layout = "default"
@@ -142,7 +142,7 @@ In the PHP section you can only define functions and refer to namespaces with th
     ?>
     ==
 
-As a general way of setting variables you should use the array access method on `$this`, although for simplicity you can use **object access as read-only**, for example:
+设置变量的通常做法是使用数组的方法来访问 `$this` ，虽然你可以简单地使用**只读对象访问**的方法，举个例子：
 
     // Write via array
     $this['foo'] = 'bar';
@@ -154,8 +154,8 @@ As a general way of setting variables you should use the array access method on 
     echo $this->foo;
 
 <a name="twig-section"></a>
-### Twig markup section
+### Twig markup 部分
 
-The Twig section defines the markup to be rendered by the template. In the Twig section you can use functions, tags and filters [provided by October](../markup), all the [native Twig features](http://twig.sensiolabs.org/documentation), or those [provided by plugins](../plugin/registration#extending-twig). The content of the Twig section depends on the template type (page, layout or partial). You will find more information about specific Twig objects further in the documentation.
+Twig 部分定义了模板需要渲染的 markup 。在 Twig 部分中你可以使用 [October 提供](../markup)的函数、标签和过滤器，所有[原生 Twig 功能](http://twig.sensiolabs.org/documentation)，或者[插件提供的功能](../plugin/registration#extending-twig)。 Twig 部分的内容取决于模板类型（页面、布局或局部）。你可以在文档中找到具体 Twig 对象的更多信息。
 
-More information can be found [in the Markup guide](../markup).
+[在 Markup 指南中](../markup)可以找到更多信息。
