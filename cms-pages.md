@@ -209,7 +209,7 @@ If needed, you can inject assets (CSS and JavaScript files) to pages with the co
 
 If the path specified in the `addCss()` and `addJs()` method argument begins with a slash (/) then it will be relative to the website root. If the asset path does not begin with a slash then it is relative to the theme.
 
-In order to output the injected assets on pages or [layouts](layout) use the [{% styles %}](../markup/tag-styles) and [{% scripts %}](../markup/tag-scripts) tags. Example:
+In order to output the injected assets on pages or [layouts](layout) use the [{ % styles % }](../markup/tag-styles) and [{ % scripts % }](../markup/tag-scripts) tags. Example:
 
     <head>
         ...
