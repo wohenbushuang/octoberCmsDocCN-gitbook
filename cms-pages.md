@@ -1,50 +1,50 @@
-# CMS Pages
+# CMS 页面
 
-- [Introduction](#introduction)
-- [Page configuration](#configuration)
-    - [URL syntax](#url-syntax)
-- [Dynamic pages](#dynamic-pages)
-    - [Page execution life cycle](#page-life-cycle)
-    - [Sending a custom response](#life-cycle-response)
-    - [Handling forms](#handling-forms)
-- [404 page](#404-page)
-- [Error page](#error-page)
-- [Page variables](#page-variables)
-- [Injecting page assets programmatically](#injecting-assets)
+- [简介](#introduction)
+- [页面配置](#configuration)
+    - [URL 语法](#url-syntax)
+- [动态页面](#dynamic-pages)
+    - [页面执行生命周期](#page-life-cycle)
+    - [发送自定义响应](#life-cycle-response)
+    - [表单处理](#handling-forms)
+- [404 页面](#404-page)
+- [错误页面](#error-page)
+- [页面变量](#page-variables)
+- [以编程方式注入页面 assets](#injecting-assets)
 
 <a name="introduction"></a>
-## Introduction
+## 简介
 
-All websites have pages. In October pages are represented with page templates. Page template files reside in the **/pages** subdirectory of a theme directory. Page file names do not affect the routing, but it's a good idea to name your pages accordingly to the page function. The files should have the **htm** extension. The [Configuration](themes#configuration-section) and [Twig](themes#twig-section) template sections are required for pages but the [PHP section](themes#php-section) is optional. Below you can see the simplest home page example.
+所有网站都有页面。在 October ，页面使用页面模板表现。页面模板文件存在主题目录的字文件夹 **/pages** 中。页面文件名不影响路由，但根据页面功能来命名你的页面是个好主意。文件需要有 **htm** 扩展名。对于页面，[配置](themes#configuration-section)和 [Twig](themes#twig-section) 模板部分是必须的，但 [PHP 部分](themes#php-section)是可选的。下面你可以看到最简单的主页页面示例。
 
     url = "/"
     ==
     <h1>Hello, world!</h1>
 
 <a name="configuration"></a>
-## Page configuration
+## 页面配置
 
-Page configuration is defined in the [Configuration Section](themes#configuration-section) of the page template file. The page configuration defines the page parameters, required for the routing and rendering the page and page [Components](components), which are explained in another article. The following configuration parameters are supported for pages:
+页面配置定义在页面模板文件的[配置部分](themes#configuration-section)。页面配置定义了页面变量，在路由和渲染页面和页面的[组件](components)时必需，这将在另一篇文章中解释。页面支持以下配置变量：
 
-Parameter | Description
+变量 | 描述
 ------------- | -------------
-**url** | the page URL, required. The URL syntax is described below.
-**title** | the page title, required.
-**layout** | the page [layout](layouts), optional. If specified, should contain the name of the layout file, without extension, for example: `default`.
-**description** | the page description for the back-end interface, optional.
+**url** | 页面 URL，必须。 下方解释了 URL 语法。
+**title** | 页面标题，必需。
+**layout** | 页面[布局](layouts)，可选。如果指明，则需包含布局文件的名字，不含扩展名，比如： `default` 。
+**description** | 后台界面中的页面描述，可选。
 
 <a name="url-syntax"></a>
-### URL syntax
+### URL 语法
 
-The page URL is defined with the **url** configuration parameter. URLs should start with the forward slash character and can contain parameters. URLs without parameters are fixed and strict. In the following example the page URL is `/blog`.
+页面 URL 由 **url** 配置变量定义。 URL 需要以斜杠开始，且可以包含变量。不含变量的 URL 是固定严苛的。在接下来的例子中页面 URL 是 `/blog`。
 
     url = "/blog"
 
-URLs with parameters are more flexible. A page with the URL pattern defined in the following example would be displayed for any address like `/blog/post/something`. URL parameters can be accessed by October components or from the page [PHP code](themes#php-section) section.
+有变量的 URL 更加灵活。任意像 `/blog/post/something` 的地址将展示拥有下方例子定义的 URL 模式的页面。可以通过 October 组件或者页面 [PHP 代码](themes#php-section)部分访问 URL 变量。
 
     url = "/blog/post/:post_id"
 
-This is how you can access the URL parameter from the page PHP section (see the [Dynamic pages](#dynamic-pages) section for more details):
+这是如何从页面 PHP 部分访问 URL 变量的方法（查看[动态页面](#dynamic-pages)部分寻求更多细节）：
 
     url = "/blog/post/:post_id"
     ==
@@ -54,15 +54,15 @@ This is how you can access the URL parameter from the page PHP section (see the 
     }
     ==
 
-Parameter names should be compatible with PHP variable names. To make a parameter optional add the question mark after its name:
+变量名需要与 PHP 变量名相兼容。在变量名后加问号可以令变量可选：
 
     url = "/blog/post/:post_id?"
 
-Parameters in the middle of the URL cannot be optional. In the next example the `:post_id` parameter is marked as optional, but is processed as required.
+ URL 中间的变量不能是可选的。下一个例子中 `:post_id` 变量被标记为可选的，但它依必需来处理
 
     url = "/blog/:post_id?/comments"
 
-Optional parameters can have default values which are used as fallback values in case the real parameter value is not presented in the URL. Default values cannot contain any asterisks, pipe symbols or question marks. The default value is specified after the **question mark**. In the next example the `category_id` parameter would be `10` for the URL `/blog/category`.
+可选变量可以有默认值作为退路以防 URL 中没有出现真实变量值。默认值不能带有任何星号、管道符和问号。默认值在**问号**后指明。下一个例子中，对于 URL `/blog/category` ， `category_id` 变量将是 `10` .
 
     url = "/blog/category/:category_id?10"
 
