@@ -1,3 +1,7 @@
+由于October CMS项目[发生了一些变化](https://github.com/wintercms/winter/issues/5)，加上本人主要开发方向也转移到其他语言和领域，本仓库存档并永久停止更新。
+
+---
+
 # 简介
 
 
